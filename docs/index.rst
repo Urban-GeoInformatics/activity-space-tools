@@ -71,11 +71,6 @@ Install from PyPI:
 
    pip install activity-space-tools
 
-Or install locally for development:
-
-.. code-block:: bash
-
-   pip install -e .
 
 Basic Example
 -------------
