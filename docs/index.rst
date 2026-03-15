@@ -111,28 +111,6 @@ Additional functions for analyzing activity spaces and exposure surfaces:
 * raster-to-polygon conversion
 * exposure statistics
 
-## Installation
-
-Install the latest stable version from PyPI:
-
-.. code-block:: bash
-
-   pip install activity-space-tools
-
-Install the latest development version directly from GitHub:
-
-.. code-block:: bash
-
-   pip install git+https://github.com/Urban-GeoInformatics/activity-space-tools.git
-
-Install locally for development:
-
-.. code-block:: bash
-
-   git clone https://github.com/Urban-GeoInformatics/activity-space-tools.git
-   cd activity-space-tools
-   pip install -e .
-
 ## Basic Example
 
 .. code-block:: python
@@ -251,7 +229,9 @@ Copyright (c) 2026 Kamyar Hasanzadeh
    :maxdepth: 2
    :caption: Documentation
 
+   installation
    usage
+   test
 
 
 .. toctree::
