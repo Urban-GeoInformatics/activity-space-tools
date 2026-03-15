@@ -2,15 +2,15 @@ Test Data and Example Workflow
 ==============================
 
 This section describes the small example dataset used to demonstrate
-and validate the functionality of the **ActivitySpace Tools** library.
+and validate the functionality of the ActivitySpace Tools library.
 
-The dataset is derived from anonymized **Public Participation GIS (PPGIS)**
+The dataset is derived from anonymized Public Participation GIS (PPGIS)
 data originally collected in **Oulu, Finland**. To protect privacy, the
 data have been simplified and reduced to a minimal example suitable
 for testing.
 
-The dataset represents mobility information for **two individuals**
-and includes a total of **eight activity markings**.
+The dataset represents mobility information for two individuals
+and includes a total of eight activity markings.
 
 
 Files
@@ -19,7 +19,7 @@ Files
 Home.shp
 ^^^^^^^^
 
-Point dataset representing the **home locations** of individuals.
+Point dataset representing the home locations of individuals.
 
 Attributes include::
 
@@ -32,7 +32,7 @@ Each individual has one home location.
 eep.shp
 ^^^^^^^
 
-Point dataset representing **Everyday Errand Points (EEPs)** or
+Point dataset representing Everyday Errand Points (EEPs) or
 destinations visited by individuals.
 
 These points originate from PPGIS survey responses where participants
@@ -46,13 +46,13 @@ Attributes include::
    travelMode
    geometry
 
-The example dataset includes **eight activity points** in total.
+The example dataset includes eight activity points in total.
 
 
 routes.shp
 ^^^^^^^^^^
 
-Line dataset representing **precomputed shortest routes** between each
+Line dataset representing precomputed shortest routes between each
 individual's home location and their activity points.
 
 Routes were calculated beforehand using a routing algorithm on a road
@@ -81,17 +81,17 @@ The script performs the following steps:
    * activity locations (EEPs)
    * travel routes
 
-2. Compute **distance-to-home metrics**
+2. Compute distance-to-home metrics
 
    The Spider model calculates the distance between each activity
    location and the individual's home.
 
-3. Generate **activity space polygons**
+3. Generate activity space polygons
 
    The Home Range model constructs an activity space polygon for
    each individual using home locations and activity points.
 
-4. Generate **exposure surfaces**
+4. Generate exposure surfaces
 
    The IREM (Individualized Residential Exposure Model) produces
    raster exposure surfaces based on:
