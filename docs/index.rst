@@ -214,9 +214,7 @@ software and the associated scientific publications.
 
 Suggested citation::
 
-   Hasanzadeh, K. (2026).
-   ActivitySpace Tools: Python tools for modeling individual activity spaces
-   and environmental exposure.
+Kamyar. (2026). Urban-GeoInformatics/activity-space-tools: 0.1.0 (0.1.0). Zenodo. https://doi.org/10.5281/zenodo.19036426
 
 ## License
 
