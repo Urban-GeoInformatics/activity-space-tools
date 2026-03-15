@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "activity-space-tools"
+version = "0.1.0"
+description = "Tools for modeling activity spaces including distance-to-home, home range, and IREM models."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+authors = [
+    { name = "Kamyar Hasanzadeh" }
+]
+
+license = { text = "MIT" }
+
+keywords = [
+    "gis",
+    "activity space",
+    "ppgis",
+    "participatory gis",
+    "geospatial",
+    "mobility",
+    "home range",
+    "urban analytics"
+]
+
+dependencies = [
+    "geopandas",
+    "pandas",
+    "numpy",
+    "shapely",
+    "scipy",
+    "rasterio",
+    "pyproj"
+]
+
+[project.urls]
+Homepage = "https://activity-space-tools.readthedocs.io/en/latest/"
+Repository = "https://github.com/Urban-GeoInformatics/activity-space-tools"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
