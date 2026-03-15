@@ -117,39 +117,39 @@ Install the latest stable version from PyPI:
 
 .. code-block:: bash
 
-pip install activity-space-tools
+   pip install activity-space-tools
 
 Install the latest development version directly from GitHub:
 
 .. code-block:: bash
 
-pip install git+https://github.com/Urban-GeoInformatics/activity-space-tools.git
+   pip install git+https://github.com/Urban-GeoInformatics/activity-space-tools.git
 
 Install locally for development:
 
 .. code-block:: bash
 
-git clone https://github.com/Urban-GeoInformatics/activity-space-tools.git
-cd activity-space-tools
-pip install -e .
+   git clone https://github.com/Urban-GeoInformatics/activity-space-tools.git
+   cd activity-space-tools
+   pip install -e .
 
 ## Basic Example
 
 .. code-block:: python
 
-import geopandas as gpd
-from activityspace.spider import add_distance_to_home
+   import geopandas as gpd
+   from activityspace.spider import add_distance_to_home
 
-poi = gpd.read_file("eep.shp")
-home = gpd.read_file("Home.shp")
+   poi = gpd.read_file("eep.shp")
+   home = gpd.read_file("Home.shp")
 
-result = add_distance_to_home(
-poi=poi,
-home=home,
-uniqueID="uid"
-)
+   result = add_distance_to_home(
+       poi=poi,
+       home=home,
+       uniqueID="uid"
+   )
 
-print(result.head())
+   print(result.head())
 
 ## Data Requirements
 
@@ -162,8 +162,8 @@ Point dataset representing individuals' home locations.
 
 Example fields::
 
-uid
-geometry
+   uid
+   geometry
 
 Activity locations (POIs)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -172,11 +172,11 @@ Point dataset representing visited destinations.
 
 Example fields::
 
-uid
-DESTid
-weight
-travelMode
-geometry
+   uid
+   DESTid
+   weight
+   travelMode
+   geometry
 
 Routes
 ^^^^^^
@@ -185,9 +185,9 @@ Line dataset representing travel paths between home and destinations.
 
 Example fields::
 
-uid
-DESTid
-geometry
+   uid
+   DESTid
+   geometry
 
 ## Example Workflow
 
@@ -202,15 +202,15 @@ A typical workflow using ActivitySpace Tools:
 
 Conceptually the workflow looks like::
 
-Home points
-↓
-Activity points
-↓
-Routes
-↓
-IREM exposure surfaces
-↓
-Activity space analysis
+   Home points
+   ↓
+   Activity points
+   ↓
+   Routes
+   ↓
+   IREM exposure surfaces
+   ↓
+   Activity space analysis
 
 ## Dependencies
 
@@ -236,12 +236,29 @@ software and the associated scientific publications.
 
 Suggested citation::
 
-Hasanzadeh, K. (2026).
-ActivitySpace Tools: Python tools for modeling individual activity spaces
-and environmental exposure.
+   Hasanzadeh, K. (2026).
+   ActivitySpace Tools: Python tools for modeling individual activity spaces
+   and environmental exposure.
 
 ## License
 
 MIT License
 
 Copyright (c) 2026 Kamyar Hasanzadeh
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Documentation
+
+   usage
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Modules
+
+   modules/spider_module
+   modules/home_range_module
+   modules/irem_module
+   modules/analytics_module
