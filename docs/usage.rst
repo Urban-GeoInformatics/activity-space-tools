@@ -1,4 +1,4 @@
-How to Use ActivitySpace Tools
+How to Use
 ==============================
 
 This page demonstrates a typical workflow using **ActivitySpace Tools**.
