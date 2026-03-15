@@ -9,4 +9,4 @@ exclude_patterns = []
 
 html_theme = "furo"
 html_static_path = ["_static"]
-html_logo = "_static/lgo_AS.png"
+html_logo = "_static/logo_AS.png"
