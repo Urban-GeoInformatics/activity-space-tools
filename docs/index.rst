@@ -1,6 +1,7 @@
-# ActivitySpace Tools
+ActivitySpace Tools
+===================
 
-ActivitySpace Tools is a Python library for modeling **individual activity spaces**
+ActivitySpace Tools is a Python library for modeling individual activity spaces
 and analyzing human mobility patterns using geospatial data.
 
 The library provides tools for computing distance-based mobility metrics,
@@ -21,18 +22,22 @@ collected through participatory mapping and Public Participation GIS
 (PPGIS) surveys, where individuals report locations of daily activities
 and experiences in geographic space.
 
-## Scientific Background
+Scientific Background
+---------------------
 
-The methods implemented in **ActivitySpace Tools** originate from
+The methods implemented in ActivitySpace Tools originate from
 peer-reviewed research on human activity spaces, environmental exposure,
 and mobility behavior.
+
+The conceptual and methodological foundations of these tools were
+developed in earlier research on spatial units of analysis and activity
+space modeling (Hasanzadeh, 2019) and subsequent journal publications.
 
 Activity space conceptualization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hasanzadeh, K., Laatikainen, T., & Kyttä, M.
-
-*Where is the neighborhood? A spatiotemporal perspective on human activity spaces.*
+Hasanzadeh, K., Laatikainen, T., & Kyttä, M. (2018).*A place-based model of local activity spaces: individual place exposure and characteristics.* Journal of Geographical Systems, 20(3), 227–252.
+https://doi.org/10.1007/s10109-017-0264-z
 
 This work discusses how activity spaces can be conceptualized beyond
 static residential neighborhoods and introduces approaches for
@@ -41,37 +46,56 @@ representing individualized spatial behavior using mobility data.
 Environmental exposure and activity spaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hasanzadeh, K., et al.
-
-*Capturing environmental exposure through activity space modeling.*
+Laatikainen, T., Hasanzadeh, K., & Kyttä, M. (2018).*Capturing exposure in environmental health research: challenges and opportunities of different activity space models.* International Journal of Health Geographics, 17(1), 29.
+https://doi.org/10.1186/s12942-018-0149-5
 
 This research demonstrates how daily mobility patterns influence
 the environmental conditions individuals are exposed to.
 
+Dynamic home range modeling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hasanzadeh, K., Broberg, A., & Kyttä, M. (2017). *Where is my neighborhood? A dynamic individual-based definition of
+home ranges and implementation of multiple evaluation criteria.*Applied Geography, 84, 1–10.
+https://doi.org/10.1016/j.apgeog.2017.04.006
+
+This work proposes an individual-based approach for defining
+residential spatial contexts and introduces the dynamic home range
+model.
+
 Individualized Residential Exposure Model (IREM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hasanzadeh, K.
+Hasanzadeh, K., Laatikainen, T., & Kyttä, M. (2018).*A place-based model of local activity spaces: individual place exposure and characteristics.* Journal of Geographical Systems, 20(3), 227–252.
+https://doi.org/10.1007/s10109-017-0264-z
 
-*Individualized Residential Exposure Model (IREM).*
+Hasanzadeh, K. (2019). *Spatial units of analysis: are there better ways? An empirical framework for use of individualized activity space models in
+environmental health promotion research.* Doctoral dissertation, Aalto University.
+https://urn.fi/URN:ISBN:978-952-60-8519-7
 
-IREM integrates
+This dissertation introduces conceptual and methodological
+foundations for individualized activity space models and proposes
+new spatial units for studying human–environment relationships.
 
-* home locations
-* activity locations
-* travel routes
+Early GIS implementation
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-to generate continuous spatial exposure surfaces that represent how
-individuals experience environments through their daily mobility.
+Hasanzadeh, K. (2018). *IASM: individualized activity space modeler.*SoftwareX, 7, 138–142.
+https://doi.org/10.1016/j.softx.2018.04.005
 
-## Features
+IASM represents an earlier implementation of activity space modeling
+tools developed for ArcGIS. The present ActivitySpace Tools library
+extends these ideas into an open Python ecosystem.
+
+Features
+--------
 
 ActivitySpace Tools currently provides four main modules.
 
 Spider model
 ^^^^^^^^^^^^
 
-Computes **distance-to-home metrics** for activity locations.
+Computes distance-to-home metrics for activity locations.
 
 Useful for studying:
 
@@ -82,7 +106,7 @@ Useful for studying:
 Home Range model
 ^^^^^^^^^^^^^^^^
 
-Generates **activity space polygons** based on home locations and
+Generates activity space polygons based on home locations and
 visited destinations.
 
 These polygons approximate the spatial extent of an individual's
@@ -91,7 +115,7 @@ daily activity area.
 IREM model
 ^^^^^^^^^^
 
-The **Individualized Residential Exposure Model (IREM)** produces
+The Individualized Residential Exposure Model (IREM) produces
 raster exposure surfaces representing how individuals experience
 the spatial environment during daily mobility.
 
@@ -111,7 +135,8 @@ Additional functions for analyzing activity spaces and exposure surfaces:
 * raster-to-polygon conversion
 * exposure statistics
 
-## Basic Example
+Basic Example
+-------------
 
 .. code-block:: python
 
@@ -129,7 +154,8 @@ Additional functions for analyzing activity spaces and exposure surfaces:
 
    print(result.head())
 
-## Data Requirements
+Data Requirements
+-----------------
 
 Typical workflows require three spatial datasets.
 
@@ -167,7 +193,8 @@ Example fields::
    DESTid
    geometry
 
-## Example Workflow
+Example Workflow
+----------------
 
 A typical workflow using ActivitySpace Tools:
 
@@ -190,7 +217,8 @@ Conceptually the workflow looks like::
    ↓
    Activity space analysis
 
-## Dependencies
+Dependencies
+------------
 
 The library depends on commonly used geospatial Python libraries:
 
@@ -202,21 +230,25 @@ The library depends on commonly used geospatial Python libraries:
 * rasterio
 * pyproj
 
-## Author
+Author
+------
 
-Kamyar Hasanzadeh
+Kamyar Hasanzadeh  
 University of Helsinki
 
-## Citation
+Citation
+--------
 
 If you use this library in academic work, please cite both the
 software and the associated scientific publications.
 
 Suggested citation::
 
-Kamyar. (2026). Urban-GeoInformatics/activity-space-tools: 0.1.0 (0.1.0). Zenodo. https://doi.org/10.5281/zenodo.19036426
+   Hasanzadeh, K. (2026).activity-space-tools: Python library for modeling individual
+   activity spaces. Zenodo. https://doi.org/10.5281/zenodo.19036426
 
-## License
+License
+-------
 
 MIT License
 
