@@ -1,5 +1,5 @@
-ActivitySpace Tools — Example Dataset and Workflow
-=================================================
+Example Dataset and Workflow
+============================
 
 This section describes the example dataset and the complete workflow
 included with the ``activityspace`` package.
