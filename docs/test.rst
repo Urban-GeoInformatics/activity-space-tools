@@ -17,7 +17,8 @@ Quick start
 -----------
 
 After installing the package, you can run the full example workflow
-using the included script and sample data.
+using the included script and sample data. (The script is also available
+online: `example_usage.py <https://github.com/Urban-GeoInformatics/activity-space-tools/blob/eeaf1a5888b792a5456ada81bcd401e95b25ff33/tests/example_usage.py>`_.)
 
 1. Open a terminal and navigate to the package directory.
 
