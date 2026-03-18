@@ -113,8 +113,8 @@ Each route connects a home location with a corresponding activity point.
 Example workflow
 ----------------
 
-The file ``example_usage.py`` demonstrates a complete workflow using
-ActivitySpace Tools.
+The file `example_usage.py <https://github.com/Urban-GeoInformatics/activity-space-tools/blob/eeaf1a5888b792a5456ada81bcd401e95b25ff33/tests/example_usage.py>`_
+demonstrates a complete workflow using ActivitySpace Tools.
 
 The workflow follows a typical research pipeline:
 
