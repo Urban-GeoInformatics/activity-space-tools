@@ -68,7 +68,7 @@ Each route connects a home location to a corresponding activity point.
 
 # Test Workflow
 
-The file `run_tests.py` demonstrates a complete workflow using the
+The file `example_usage.py` demonstrates a complete workflow using the
 ActivitySpace Tools library.
 
 The script performs the following steps:

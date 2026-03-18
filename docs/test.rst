@@ -1,8 +1,22 @@
-Test Data and Example Workflow
-==============================
+ActivitySpace Tools — Example Dataset and Workflow
+=================================================
 
-This section describes the small example dataset used to demonstrate
-and validate the functionality of the ActivitySpace Tools library.
+This section describes the example dataset and the complete workflow
+included with the ``activityspace`` package.
+
+The package provides:
+
+- ``example_usage.py`` → a ready-to-run script demonstrating the full workflow  
+- ``test_data/`` → a small sample dataset for testing and learning  
+
+The example is designed to run out-of-the-box and demonstrates how to
+move from raw spatial data to activity spaces, exposure estimates,
+and summary metrics.
+
+---
+
+Test Data
+---------
 
 The dataset is derived from anonymized Public Participation GIS (PPGIS)
 data originally collected in **Oulu, Finland**. To protect privacy, the
@@ -12,9 +26,23 @@ for testing.
 The dataset represents mobility information for two individuals
 and includes a total of eight activity markings.
 
+It is intentionally small so that the full workflow can be executed quickly.
 
-Files
------
+---
+
+Data files
+----------
+
+The example uses the following files inside ``test_data/``:
+
+::
+
+    test_data/
+        eep.shp
+        Home.shp
+        routes.shp
+
+---
 
 Home.shp
 ^^^^^^^^
@@ -28,6 +56,7 @@ Attributes include::
 
 Each individual has one home location.
 
+---
 
 eep.shp
 ^^^^^^^
@@ -48,6 +77,7 @@ Attributes include::
 
 The example dataset includes eight activity points in total.
 
+---
 
 routes.shp
 ^^^^^^^^^^
@@ -66,63 +96,126 @@ Attributes include::
 
 Each route connects a home location with a corresponding activity point.
 
+---
 
-Test Workflow
--------------
+Example workflow
+----------------
 
-The file ``run_tests.py`` demonstrates a complete workflow using
+The file ``example_usage.py`` demonstrates a complete workflow using
 ActivitySpace Tools.
 
-The script performs the following steps:
+Running the script performs the following steps:
+
+---
 
 1. Load spatial datasets
 
-   * home locations
-   * activity locations (EEPs)
-   * travel routes
+   .. code-block:: python
 
-2. Compute distance-to-home metrics
+      poi = gpd.read_file(poi_path)
+      home = gpd.read_file(home_path)
+      routes = gpd.read_file(routes_path)
 
-   The Spider model calculates the distance between each activity
-   location and the individual's home.
+---
 
-3. Generate activity space polygons
+2. Compute distance-to-home metrics (Spider model)
 
-   The Home Range model constructs an activity space polygon for
-   each individual using home locations and activity points.
+   .. code-block:: python
 
-4. Generate exposure surfaces
+      spider_out = add_distance_to_home(...)
 
-   The IREM (Individualized Residential Exposure Model) produces
-   raster exposure surfaces based on:
+   Adds:
 
-   * home locations
-   * activity locations
-   * travel routes
+   - ``dist_m`` → distance from each activity point to home
+
+---
+
+3. Generate activity space polygons (Home Range model)
+
+   .. code-block:: python
+
+      home_range = model_home_range(...)
+
+   Creates one polygon per individual representing their activity space.
+
+---
+
+4. Generate exposure surfaces (IREM model)
+
+   .. code-block:: python
+
+      rasters = run_irem(...)
+
+   Produces raster exposure surfaces based on:
+
+   - home locations  
+   - activity locations  
+   - travel routes  
+
+---
 
 5. Summarize raster exposure
 
-   Exposure values are summarized for each individual.
+   .. code-block:: python
 
-6. Compute geometry metrics
+      summary = summarize_rasters(...)
 
-   Geometric properties of the resulting activity space polygons
-   are calculated.
+   Outputs metrics such as mean and total exposure.
+
+---
+
+6. Compute exposure and geometry metrics
+
+   .. code-block:: python
+
+      exposure = exposure_summary(...)
+      geom = as_geometry_calculator(...)
+
+   Produces:
+
+   - exposure summaries linked to activity spaces  
+   - geometric properties (area, perimeter, etc.)
+
+---
 
 7. Convert exposure rasters to polygons
 
-   Raster exposure surfaces can be converted into polygons using
-   percentile thresholds.
+   .. code-block:: python
 
+      irem_polygons = irem_rasters_to_polygons(...)
+
+   Creates polygons representing areas of higher exposure.
+
+---
+
+Outputs
+-------
+
+All results are written to:
+
+::
+
+    test_output/
+
+Including:
+
+- distance metrics  
+- activity space polygons  
+- exposure rasters  
+- summary tables  
+- geometry metrics  
+- exposure polygons  
+
+---
 
 Purpose
 -------
 
 These files are intended only for:
 
-* testing library functionality
-* demonstrating example workflows
-* providing reproducible examples
+- testing library functionality  
+- demonstrating example workflows  
+- providing reproducible examples  
 
-The dataset is intentionally small so that the entire workflow can
-be executed quickly.
+The dataset is simplified and should not be interpreted as a full
+research dataset.
